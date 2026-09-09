@@ -29,11 +29,9 @@
           <div class="row"><span class="k">Access</span><span>{{ section.settings.access_line }}</span></div>
           <div class="row"><span class="k">Contact</span><span>{{ section.settings.contact_line }}</span></div>
         </div>
-        {%- if section.settings.directions_url != blank -%}
-          <div style="margin-top: 2.2rem;">
-            <a href="{{ section.settings.directions_url }}" class="button button--secondary" target="_blank" rel="noopener">Get Directions</a>
-          </div>
-        {%- endif -%}
+        <div style="margin-top: 2.2rem;">
+          <a href="{{ section.settings.directions_url | default: 'https://www.google.com/maps/search/?api=1&query=631+S+1st+Street+Springfield+NE' }}" class="button button--secondary" target="_blank" rel="noopener">Get Directions</a>
+        </div>
       </div>
       <div class="stc-map-wrap">
         {%- if section.settings.map_embed_url != blank -%}
@@ -58,7 +56,7 @@
     { "type": "textarea", "id": "address", "label": "Address", "default": "631 S 1st Street, Bay #6, Springfield, NE 68059" },
     { "type": "text", "id": "access_line", "label": "Access line", "default": "24/7 for members" },
     { "type": "text", "id": "contact_line", "label": "Contact line", "default": "402-350-0546" },
-    { "type": "url", "id": "directions_url", "label": "Get Directions link", "default": "https://www.google.com/maps/search/?api=1&query=631+S+1st+Street+Springfield+NE" },
+    { "type": "url", "id": "directions_url", "label": "Get Directions link" },
     { "type": "text", "id": "map_embed_url", "label": "Google Maps embed URL (Maps > Share > Embed a map)", "info": "Leave blank to show a photo instead of a live map." },
     { "type": "header", "content": "Padding" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 52 },
