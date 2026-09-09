@@ -251,7 +251,7 @@
       "settings": {
         "title": "Shop STC",
         "heading_size": "h1",
-        "description": "Gear people actually want to wear.",
+        "description": "<p>Gear people actually want to wear.</p>",
         "show_description": true,
         "products_to_show": 4,
         "columns_desktop": 4,
