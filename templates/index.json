@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "stc_hero": {
@@ -11,7 +20,9 @@
         "button_label_1": "Join STC",
         "button_link_1": "/pages/join",
         "button_label_2": "Try STC Free",
-        "button_link_2": "/pages/free-week"
+        "button_link_2": "/pages/free-week",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "stc_why": {
@@ -53,7 +64,12 @@
         "t4"
       ],
       "settings": {
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "tile_background": "#f6f3ec",
+        "eyebrow": "Why STC",
+        "heading": "A real gym, close to home.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_gym": {
@@ -103,7 +119,12 @@
         "p5"
       ],
       "settings": {
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "eyebrow": "The Gym",
+        "heading": "Clean. Well-equipped. Never crowded.",
+        "text": "Four power racks, free weights, dumbbells up to 120 lbs, strength machines, and cardio — with room to actually move.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_memberships": {
@@ -112,50 +133,53 @@
         "m1": {
           "type": "plan",
           "settings": {
+            "best_value": false,
             "name": "24/7 Gym Membership",
             "price": "$60",
-            "price_suffix": "/mo",
+            "price_suffix": "/month",
             "description": "For people who want a great local gym and the freedom to train on their own schedule.",
             "features": "24/7 gym access\nFree weights & strength equipment\nCardio equipment",
             "button_label": "Join — $60/mo",
-            "button_link": "https://square.link/u/7yYeYzN9"
+            "button_link": "/pages/join"
           }
         },
         "m2": {
           "type": "plan",
           "settings": {
             "best_value": true,
-            "name": "STC Coached",
+            "name": "STC Coached membership",
             "price": "$90",
-            "price_suffix": "/mo",
+            "price_suffix": "/month",
             "description": "Programming, coaching, and unlimited 24/7 access.",
             "features": "Unlimited 24/7 access\nPersonal programming\n7 coached sessions / week",
             "button_label": "Join — $90/mo",
-            "button_link": "https://square.link/u/8vIMQHrr"
+            "button_link": "/pages/join"
           }
         },
         "m3": {
           "type": "plan",
           "settings": {
-            "name": "Student",
+            "best_value": false,
+            "name": "Student Membership",
             "price": "$55",
-            "price_suffix": "/mo",
+            "price_suffix": "/month",
             "description": "Gym access and programming, priced for students.",
             "features": "Gym access\nProgramming",
             "button_label": "Join — $55/mo",
-            "button_link": "https://square.link/u/55sgPcvT"
+            "button_link": "/pages/join"
           }
         },
         "m4": {
           "type": "plan",
           "settings": {
-            "name": "Family",
+            "best_value": false,
+            "name": "Family membership",
             "price": "$60",
-            "price_suffix": "/mo first",
-            "description": "$60/mo for the first member, $10/mo off each additional.",
+            "price_suffix": "/month",
+            "description": "$60/month for the first member, $50/month each additional.",
             "features": "Base membership\n+$10/mo off each additional member",
             "button_label": "Start a Family Plan",
-            "button_link": "https://square.link/u/vOQCCqpb"
+            "button_link": "/pages/join"
           }
         }
       },
@@ -166,20 +190,36 @@
         "m4"
       ],
       "settings": {
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "eyebrow": "Memberships",
+        "heading": "Straightforward pricing. No surprises.",
+        "max_width": 0,
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_no_frills": {
       "type": "stc-no-frills",
       "settings": {
-        "color_scheme": "scheme-3"
+        "color_scheme": "scheme-3",
+        "eyebrow": "No Frills. Just Work.",
+        "heading": "STC isn't built around gimmicks.",
+        "items": "Quality equipment\nConvenient 24/7 access\nA clean place to train\nCoaching when you want it\nPeople who know your name",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "stc_coach": {
       "type": "stc-coach",
       "settings": {
         "color_scheme": "scheme-2",
-        "button_link": "/pages/training"
+        "eyebrow": "Train With Clay",
+        "heading": "Hands-on coaching, not a corporate script.",
+        "text": "Clay is on the floor, knows members by name, and stays connected to local and high-school sports. STC Coached members get real programming and coaching — not just a punch card.",
+        "button_label": "Explore STC Coached",
+        "button_link": "/pages/training",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_who": {
@@ -221,20 +261,39 @@
         "w4"
       ],
       "settings": {
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "eyebrow": "Who Trains Here",
+        "heading": "Beginners. Athletes. Everyone in between.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_testimonials": {
       "type": "stc-testimonials",
       "blocks": {
         "r1": {
-          "type": "testimonial"
+          "type": "testimonial",
+          "settings": {
+            "quote": "[Placeholder — replace with a real member/Google review before launch.]",
+            "name": "Member name",
+            "show_placeholder_flag": true
+          }
         },
         "r2": {
-          "type": "testimonial"
+          "type": "testimonial",
+          "settings": {
+            "quote": "[Placeholder — replace with a real member/Google review before launch.]",
+            "name": "Member name",
+            "show_placeholder_flag": true
+          }
         },
         "r3": {
-          "type": "testimonial"
+          "type": "testimonial",
+          "settings": {
+            "quote": "[Placeholder — replace with a real member/Google review before launch.]",
+            "name": "Member name",
+            "show_placeholder_flag": true
+          }
         }
       },
       "block_order": [
@@ -243,38 +302,11 @@
         "r3"
       ],
       "settings": {
-        "color_scheme": "scheme-2"
-      }
-    },
-    "stc_shop": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Shop STC",
-        "heading_size": "h1",
-        "description": "Gear people actually want to wear.",
-        "show_description": true,
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": true,
-        "image_ratio": "square",
-        "columns_mobile": "2",
+        "color_scheme": "scheme-2",
+        "eyebrow": "What Members Say",
+        "heading": "Real reviews go here before launch.",
         "padding_top": 52,
         "padding_bottom": 52
-      }
-    },
-    "stc_location": {
-      "type": "stc-location",
-      "settings": {
-        "color_scheme": "scheme-2"
-      }
-    },
-    "stc_final": {
-      "type": "stc-final-cta",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "button_link_1": "/pages/join",
-        "button_link_2": "/pages/free-week"
       }
     }
   },
@@ -286,9 +318,6 @@
     "stc_no_frills",
     "stc_coach",
     "stc_who",
-    "stc_testimonials",
-    "stc_shop",
-    "stc_location",
-    "stc_final"
+    "stc_testimonials"
   ]
 }
