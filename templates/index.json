@@ -262,6 +262,12 @@
         "padding_top": 52,
         "padding_bottom": 52
       }
+    },
+    "stc_location": {
+      "type": "stc-location",
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
     }
   },
   "order": [
@@ -273,6 +279,7 @@
     "stc_coach",
     "stc_who",
     "stc_testimonials",
-    "stc_shop"
+    "stc_shop",
+    "stc_location"
   ]
 }
