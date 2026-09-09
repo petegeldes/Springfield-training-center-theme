@@ -21,10 +21,12 @@
   @media screen and (max-width: 600px) { .stc-frills-list { grid-template-columns: 1fr; } }
   .stc-frills-list li { font-size: 1.6rem; font-weight: 600; padding-left: 2.2rem; position: relative; }
   .stc-frills-list li::before { content: '—'; position: absolute; left: 0; color: var(--stc-red); font-weight: 800; }
+  .stc-no-frills-badge { width: 96px; height: 96px; margin: 0 auto 2rem; display: block; }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding" style="text-align: center;">
   <div class="page-width" style="max-width: 68rem;">
+    <img class="stc-no-frills-badge" src="{{ 'stc-logo-circular-light.png' | asset_url }}" alt="Springfield Training Center" loading="lazy">
     <p class="stc-eyebrow" style="color: #E8778A;">{{ section.settings.eyebrow | escape }}</p>
     <h2 class="h1">{{ section.settings.heading }}</h2>
   </div>
