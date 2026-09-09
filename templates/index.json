@@ -1,126 +1,26 @@
 {
   "sections": {
-    "stc_hero": {
-      "type": "stc-hero",
+    "diagnostic": {
+      "type": "rich-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "STC diagnostic homepage — index.json is rendering",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": ["h"],
       "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "scheme-1",
-        "eyebrow": "Springfield, Nebraska",
-        "heading": "Your gym. Right here in Springfield.",
-        "subheading": "24/7 access. Real equipment. Real coaching. A local gym where you're more than a membership number.",
-        "support_line": "Everything you need to train — without driving into Omaha.",
-        "button_label_1": "Join STC",
-        "button_link_1": "/pages/join",
-        "button_label_2": "Try STC Free",
-        "button_link_2": "/pages/free-week"
-      }
-    },
-    "stc_why": {
-      "type": "stc-why",
-      "blocks": {
-        "t1": { "type": "tile", "settings": { "title": "24/7 Access", "text": "Train when it works for you." } },
-        "t2": { "type": "tile", "settings": { "title": "Everything You Need", "text": "Four racks, free weights, dumbbells to 120, strength machines and cardio." } },
-        "t3": { "type": "tile", "settings": { "title": "Close to Home", "text": "A real gym right here in Springfield." } },
-        "t4": { "type": "tile", "settings": { "title": "Real Coaching", "text": "Need more than access? Get programming and coached training from someone who actually knows you." } }
-      },
-      "block_order": ["t1", "t2", "t3", "t4"],
-      "settings": { "color_scheme": "scheme-2" }
-    },
-    "stc_gym": {
-      "type": "stc-gym-gallery",
-      "blocks": {
-        "p1": { "type": "photo", "settings": { "fallback_asset": "stc-gym-1.jpg", "alt": "STC member deadlifting in a power rack" } },
-        "p2": { "type": "photo", "settings": { "fallback_asset": "stc-gym-2.jpg", "alt": "STC member performing a back squat" } },
-        "p3": { "type": "photo", "settings": { "fallback_asset": "stc-gym-3.jpg", "alt": "STC member performing a front squat" } },
-        "p4": { "type": "photo", "settings": { "fallback_asset": "stc-gym-4.jpg", "alt": "Members training on the STC gym floor" } },
-        "p5": { "type": "photo", "settings": { "fallback_asset": "stc-gym-5.jpg", "alt": "STC member with a lifting belt, seated on a bench" } }
-      },
-      "block_order": ["p1", "p2", "p3", "p4", "p5"],
-      "settings": { "color_scheme": "scheme-1" }
-    },
-    "stc_memberships": {
-      "type": "stc-memberships",
-      "blocks": {
-        "m1": { "type": "plan", "settings": { "name": "24/7 Gym Membership", "price": "$60", "price_suffix": "/mo", "description": "For people who want a great local gym and the freedom to train on their own schedule.", "features": "24/7 gym access\nFree weights & strength equipment\nCardio equipment", "button_label": "Join — $60/mo", "button_link": "/pages/join" } },
-        "m2": { "type": "plan", "settings": { "best_value": true, "name": "STC Coached", "price": "$90", "price_suffix": "/mo", "description": "Programming, coaching, and unlimited 24/7 access.", "features": "Unlimited 24/7 access\nPersonal programming\n7 coached sessions / week", "button_label": "Join — $90/mo", "button_link": "/pages/join" } },
-        "m3": { "type": "plan", "settings": { "name": "Student", "price": "$55", "price_suffix": "/mo", "description": "Gym access and programming, priced for students.", "features": "Gym access\nProgramming", "button_label": "Join — $55/mo", "button_link": "/pages/join" } },
-        "m4": { "type": "plan", "settings": { "name": "Family", "price": "$60", "price_suffix": "/mo first", "description": "$60/mo for the first member, $10/mo off each additional.", "features": "Base membership\n+$10/mo off each additional member", "button_label": "Start a Family Plan", "button_link": "/pages/join" } }
-      },
-      "block_order": ["m1", "m2", "m3", "m4"],
-      "settings": { "color_scheme": "scheme-1" }
-    },
-    "stc_no_frills": {
-      "type": "stc-no-frills",
-      "settings": { "color_scheme": "scheme-3" }
-    },
-    "stc_coach": {
-      "type": "stc-coach",
-      "settings": {
-        "color_scheme": "scheme-2",
-        "button_link": "/pages/training"
-      }
-    },
-    "stc_who": {
-      "type": "stc-who-trains",
-      "blocks": {
-        "w1": { "type": "photo", "settings": { "fallback_asset": "stc-who-woman.jpg", "label": "Adults getting back at it" } },
-        "w2": { "type": "photo", "settings": { "fallback_asset": "stc-who-man.jpg", "label": "Everyday strength" } },
-        "w3": { "type": "photo", "settings": { "fallback_asset": "stc-who-student.jpg", "label": "Student athletes" } },
-        "w4": { "type": "photo", "settings": { "fallback_asset": "stc-who-group.jpg", "label": "A community, not a crowd" } }
-      },
-      "block_order": ["w1", "w2", "w3", "w4"],
-      "settings": { "color_scheme": "scheme-1" }
-    },
-    "stc_testimonials": {
-      "type": "stc-testimonials",
-      "blocks": {
-        "r1": { "type": "testimonial" },
-        "r2": { "type": "testimonial" },
-        "r3": { "type": "testimonial" }
-      },
-      "block_order": ["r1", "r2", "r3"],
-      "settings": { "color_scheme": "scheme-2" }
-    },
-    "stc_shop": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Shop STC",
-        "heading_size": "h1",
-        "description": "Gear people actually want to wear.",
-        "show_description": true,
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": true,
-        "image_ratio": "square",
-        "columns_mobile": "2",
-        "padding_top": 52,
-        "padding_bottom": 52
-      }
-    },
-    "stc_location": {
-      "type": "stc-location",
-      "settings": { "color_scheme": "scheme-2" }
-    },
-    "stc_final": {
-      "type": "stc-final-cta",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "button_link_1": "/pages/join",
-        "button_link_2": "/pages/free-week"
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
-  "order": [
-    "stc_hero",
-    "stc_why",
-    "stc_gym",
-    "stc_memberships",
-    "stc_no_frills",
-    "stc_coach",
-    "stc_who",
-    "stc_testimonials",
-    "stc_shop",
-    "stc_location",
-    "stc_final"
-  ]
+  "order": ["diagnostic"]
 }
