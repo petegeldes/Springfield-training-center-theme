@@ -1,0 +1,136 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .stc-mdetail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  @media screen and (max-width: 749px) { .stc-mdetail-grid { grid-template-columns: 1fr; } }
+  .stc-mcard { background: #fff; border: 1px solid var(--stc-line); border-radius: 3px; padding: 3rem; }
+  .stc-mcard--best { border: 2px solid var(--stc-red); }
+  .stc-mcard .stc-mcard__price { font-family: var(--font-heading-family); font-size: 3.6rem; margin: 0.8rem 0; color: var(--stc-navy); }
+  .stc-mcard .stc-mcard__price span { font-family: var(--font-body-family); font-size: 1.4rem; font-weight: 600; color: var(--stc-steel); text-transform: none; }
+  .stc-mcard .stc-mcard__qa { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--stc-line); }
+  .stc-mcard .stc-mcard__q { font-size: 1.1rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stc-red); margin-bottom: 0.4rem; }
+  .stc-mcard .stc-mcard__a { font-size: 1.5rem; }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width" style="max-width: 68rem;">
+    <p class="stc-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    <h1 class="h0">{{ section.settings.heading }}</h1>
+  </div>
+  <div class="page-width" style="margin-top: 2rem;">
+    <div class="stc-mdetail-grid">
+      {%- for block in section.blocks -%}
+        <div class="stc-mcard{% if block.settings.best_value %} stc-mcard--best{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.best_value -%}<span class="stc-plan__flag" style="position: static; display: inline-block; margin-bottom: 1rem;">Best Value</span>{%- endif -%}
+          <p class="stc-eyebrow">{{ block.settings.name | escape }}</p>
+          <p class="stc-mcard__price">{{ block.settings.price | escape }}<span> {{ block.settings.price_suffix | escape }}</span></p>
+          <p style="font-size: 1.5rem; color: var(--stc-steel);">{{ block.settings.description }}</p>
+          <div class="stc-mcard__qa">
+            <div class="stc-mcard__q">What do I get?</div>
+            <div class="stc-mcard__a">{{ block.settings.what }}</div>
+          </div>
+          <div class="stc-mcard__qa">
+            <div class="stc-mcard__q">Who is it for?</div>
+            <div class="stc-mcard__a">{{ block.settings.who }}</div>
+          </div>
+          <div class="stc-mcard__qa">
+            <div class="stc-mcard__q">How do I join?</div>
+            <div class="stc-mcard__a">{{ block.settings.how }}</div>
+          </div>
+          <div style="margin-top: 2rem;">
+            <a href="{{ block.settings.button_link | default: '/pages/join' }}" class="button {% if block.settings.best_value %}button--primary{% else %}button--secondary{% endif %}" style="width: 100%; text-align: center;">{{ block.settings.button_label | escape }}</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "STC Memberships Detail",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Memberships" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What does it cost? What do you get?" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 44 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 52 }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan",
+      "settings": [
+        { "type": "checkbox", "id": "best_value", "label": "Mark as Best Value", "default": false },
+        { "type": "text", "id": "name", "label": "Plan name" },
+        { "type": "text", "id": "price", "label": "Price" },
+        { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "/month" },
+        { "type": "textarea", "id": "description", "label": "Short description" },
+        { "type": "textarea", "id": "what", "label": "What do I get?" },
+        { "type": "textarea", "id": "who", "label": "Who is it for?" },
+        { "type": "textarea", "id": "how", "label": "How do I join?", "default": "Pick this plan and pay securely through Square." },
+        { "type": "text", "id": "button_label", "label": "Button label" },
+        { "type": "url", "id": "button_link", "label": "Button link (Square Payment Link)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "STC Memberships Detail",
+      "blocks": [
+        {
+          "type": "plan",
+          "settings": {
+            "name": "24/7 Gym Membership", "price": "$60", "price_suffix": "/month",
+            "description": "For people who want a great local gym and the freedom to train on their own schedule.",
+            "what": "Unlimited gym access, 24/7 entry, strength equipment, free weights, and cardio equipment.",
+            "who": "Anyone who wants to train independently, any time of day.",
+            "button_label": "Join — $60/mo"
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "best_value": true, "name": "STC Coached", "price": "$90", "price_suffix": "/month",
+            "description": "Stop guessing what to do when you get to the gym. Get programming, coaching, and accountability — while keeping unlimited 24/7 access.",
+            "what": "Unlimited 24/7 gym access, personal workout programming, and coached classes/training — 7 sessions a week.",
+            "who": "Anyone who wants direction, coaching, and community — for $30/month more than standard access.",
+            "button_label": "Join — $90/mo"
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "name": "Student", "price": "$55", "price_suffix": "/month",
+            "description": "Gym access and programming, priced for students.",
+            "what": "Gym access and programming.",
+            "who": "Students. Eligibility details (age/school requirements, if any) to be confirmed by STC before launch.",
+            "button_label": "Join — $55/mo"
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "name": "Family", "price": "$60", "price_suffix": "/mo first member",
+            "description": "$10/month off each additional family member.",
+            "what": "The base membership for your first family member, with $10/month off every additional member you add.",
+            "who": "Families training together. Full eligibility rules to be confirmed by STC before launch.",
+            "button_label": "Start a Family Plan"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

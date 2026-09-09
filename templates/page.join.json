@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "h": { "type": "heading", "settings": { "heading": "Choose your membership", "heading_size": "h0" } },
+        "t": { "type": "text", "settings": { "text": "<p>Pick a plan below and you'll be taken to a secure Square checkout page to pay. Your membership starts as soon as payment is confirmed.</p>" } }
+      },
+      "block_order": ["h", "t"],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 44,
+        "padding_bottom": 12
+      }
+    },
+    "plans": {
+      "type": "stc-memberships",
+      "blocks": {
+        "j1": { "type": "plan", "settings": { "name": "24/7 Gym Membership", "price": "$60", "price_suffix": "/mo", "description": "For people who want a great local gym and the freedom to train on their own schedule.", "features": "24/7 gym access\nFree weights & strength equipment\nCardio equipment", "button_label": "Join — $60/mo", "button_link": "#" } },
+        "j2": { "type": "plan", "settings": { "best_value": true, "name": "STC Coached", "price": "$90", "price_suffix": "/mo", "description": "Programming, coaching, and unlimited 24/7 access.", "features": "Unlimited 24/7 access\nPersonal programming\n7 coached sessions / week", "button_label": "Join — $90/mo", "button_link": "#" } },
+        "j3": { "type": "plan", "settings": { "name": "Student", "price": "$55", "price_suffix": "/mo", "description": "Gym access and programming, priced for students.", "features": "Gym access\nProgramming", "button_label": "Join — $55/mo", "button_link": "#" } },
+        "j4": { "type": "plan", "settings": { "name": "Family", "price": "$60", "price_suffix": "/mo first", "description": "$60/mo for the first member, $10/mo off each additional.", "features": "Base membership\n+$10/mo off each additional member", "button_label": "Start a Family Plan", "button_link": "#" } }
+      },
+      "block_order": ["j1", "j2", "j3", "j4"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "eyebrow": "",
+        "heading": "",
+        "padding_top": 8,
+        "padding_bottom": 20
+      }
+    },
+    "waiver_note": {
+      "type": "rich-text",
+      "blocks": {
+        "t": { "type": "text", "settings": { "text": "<p><strong>Before you pay:</strong> your Square checkout includes STC's membership agreement and liability waiver. <em>[NEEDED FROM OWNER/LEGAL: confirm the exact waiver text is attached to each Square item before this goes live.]</em></p>" } }
+      },
+      "block_order": ["t"],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "full_width": false,
+        "padding_top": 24,
+        "padding_bottom": 44
+      }
+    }
+  },
+  "order": ["intro", "plans", "waiver_note"]
+}

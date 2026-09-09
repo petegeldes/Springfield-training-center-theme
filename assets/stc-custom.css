@@ -1,0 +1,263 @@
+/* Springfield Training Center — brand overrides on top of Dawn */
+
+:root {
+  --font-heading-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+  --font-heading-style: normal;
+  --font-heading-weight: 400;
+  --font-body-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+
+  --stc-red: #c11a34;
+  --stc-red-dark: #8f1226;
+  --stc-navy: #141a26;
+  --stc-paper: #f6f3ec;
+  --stc-cream: #eee9dd;
+  --stc-steel: #5d6472;
+  --stc-line: #ddd6c6;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.02;
+}
+
+.button,
+button.button,
+a.button {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.list-menu--inline a,
+.header__menu-item {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+}
+
+/* Sticky mobile Join / Free Week bar */
+.stc-mobile-cta {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  background: var(--stc-navy);
+  padding: 10px;
+  gap: 10px;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.stc-mobile-cta a {
+  flex: 1;
+  text-align: center;
+  padding: 13px 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+}
+
+.stc-mobile-cta .stc-mobile-cta__join {
+  background: var(--stc-red);
+  color: #fff;
+}
+
+.stc-mobile-cta .stc-mobile-cta__free {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 749px) {
+  .stc-mobile-cta {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+/* Membership pricing cards, shared by home preview + memberships page */
+.stc-plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 989px) {
+  .stc-plans {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .stc-plans {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stc-plan {
+  background: #fff;
+  border: 1px solid var(--stc-line);
+  border-radius: 3px;
+  padding: 2.6rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stc-plan--best {
+  border: 2px solid var(--stc-red);
+  box-shadow: 0 14px 34px -18px rgba(193, 26, 52, 0.55);
+}
+
+.stc-plan__flag {
+  position: absolute;
+  top: -1.3rem;
+  left: 2.2rem;
+  background: var(--stc-red);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+}
+
+.stc-plan__name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stc-steel);
+}
+
+.stc-plan__price {
+  font-family: var(--font-heading-family);
+  font-size: 4rem;
+  margin: 0.8rem 0 0.2rem;
+  color: var(--stc-navy);
+}
+
+.stc-plan__price span {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--stc-steel);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.stc-plan__who {
+  font-size: 1.4rem;
+  color: var(--stc-steel);
+  margin-bottom: 1.6rem;
+  min-height: 4rem;
+}
+
+.stc-plan ul {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex: 1;
+}
+
+.stc-plan li {
+  font-size: 1.4rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.stc-plan li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--stc-red);
+  border-radius: 50%;
+}
+
+.stc-eyebrow {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stc-red);
+  margin-bottom: 0.8rem;
+}
+
+/* Schedule table (Train With Clay / Training page) */
+.stc-schedule {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0 2.4rem;
+  max-width: 60rem;
+}
+
+.stc-schedule th,
+.stc-schedule td {
+  text-align: left;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.4rem;
+}
+
+.stc-schedule th {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.color-scheme-1 .stc-schedule th,
+.color-scheme-1 .stc-schedule td,
+.color-scheme-2 .stc-schedule th,
+.color-scheme-2 .stc-schedule td,
+.color-scheme-5 .stc-schedule th,
+.color-scheme-5 .stc-schedule td {
+  border-bottom-color: var(--stc-line);
+}
+
+/* Simple grid used by Who Trains Here / gym photo galleries */
+.stc-photo-grid {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 3rem;
+}
+
+.stc-photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.stc-photo-grid figure {
+  margin: 0;
+}
+
+.stc-photo-grid figcaption {
+  margin-top: 1rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

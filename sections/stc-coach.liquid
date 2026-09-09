@@ -1,0 +1,72 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .stc-coach-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4.4rem;
+    align-items: center;
+  }
+  @media screen and (max-width: 900px) { .stc-coach-grid { grid-template-columns: 1fr; } }
+  .stc-coach-grid img { width: 100%; border-radius: 2px; display: block; aspect-ratio: 4/5; object-fit: cover; }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="stc-coach-grid">
+      <div>
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400,600,800,1000', alt: section.settings.image.alt | default: 'Coached training session at STC' }}
+        {%- else -%}
+          <img src="{{ 'stc-coach.jpg' | asset_url }}" alt="Coached training session at STC" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div>
+        <p class="stc-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h2 class="h1">{{ section.settings.heading }}</h2>
+        <p style="font-size: 1.6rem; margin-top: 1.4rem;">{{ section.settings.text }}</p>
+        <table class="stc-schedule">
+          <thead><tr><th>Day</th><th>Sessions</th></tr></thead>
+          <tbody>
+            <tr><td>Monday</td><td>5:30 AM &amp; 6:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>5:30 AM &amp; 6:00 PM</td></tr>
+            <tr><td>Friday</td><td>5:30 AM &amp; 5:00 PM</td></tr>
+            <tr><td>Saturday</td><td>7:00 AM</td></tr>
+          </tbody>
+        </table>
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link }}" class="button button--secondary">{{ section.settings.button_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "STC Coach",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" },
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Train With Clay" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Hands-on coaching, not a corporate script." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Clay is on the floor, knows members by name, and stays connected to local and high-school sports. STC Coached members get real programming and coaching — not just a punch card." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Explore STC Coached" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 52 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 52 }
+  ],
+  "presets": [{ "name": "STC Coach" }]
+}
+{% endschema %}

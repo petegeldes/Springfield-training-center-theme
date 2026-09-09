@@ -1,0 +1,45 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .stc-welcome-box { max-width: 64rem; margin: 0 auto; text-align: center; }
+  .stc-welcome-key { background: rgba(255,255,255,0.06); border: 1px dashed rgba(255,255,255,0.4); border-radius: 3px; padding: 2.4rem; margin-top: 2.4rem; text-align: left; font-size: 1.5rem; }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="stc-welcome-box">
+      <h1 class="h0">{{ section.settings.heading }}</h1>
+      <p style="font-size: 1.8rem; margin-top: 1.6rem;">{{ section.settings.text }}</p>
+      <div class="stc-welcome-key">
+        <strong>Final step: key pickup</strong><br><br>
+        {{ section.settings.key_pickup_instructions }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "STC Welcome",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-3" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Welcome to STC. You're in." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Your Springfield Training Center membership is active. The final step is receiving your 24/7 access key." },
+    { "type": "textarea", "id": "key_pickup_instructions", "label": "Key pickup instructions", "default": "[NEEDED FROM OWNER: exact instructions for how a new member gets their 24/7 access key — e.g. when/where to meet Clay, or a lockbox code.]" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 68 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 68 }
+  ],
+  "presets": [{ "name": "STC Welcome" }]
+}
+{% endschema %}

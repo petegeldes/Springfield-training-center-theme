@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "main": {
+      "type": "stc-free-week"
+    }
+  },
+  "order": ["main"]
+}

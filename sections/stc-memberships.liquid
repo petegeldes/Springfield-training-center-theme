@@ -1,0 +1,83 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width" style="max-width: 68rem;">
+    <p class="stc-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    <h2 class="h1">{{ section.settings.heading }}</h2>
+  </div>
+  <div class="page-width">
+    <div class="stc-plans"{% if section.settings.max_width > 0 %} style="max-width: {{ section.settings.max_width }}px; margin-left: auto; margin-right: auto;"{% endif %}>
+      {%- for block in section.blocks -%}
+        <div class="stc-plan{% if block.settings.best_value %} stc-plan--best{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.best_value -%}<span class="stc-plan__flag">Best Value</span>{%- endif -%}
+          <p class="stc-plan__name">{{ block.settings.name | escape }}</p>
+          <p class="stc-plan__price">{{ block.settings.price | escape }}<span> {{ block.settings.price_suffix | escape }}</span></p>
+          <p class="stc-plan__who">{{ block.settings.description }}</p>
+          <ul>
+            {%- assign features = block.settings.features | newline_to_br | split: '<br />' -%}
+            {%- for feature in features -%}
+              {%- assign feature_trimmed = feature | strip -%}
+              {%- if feature_trimmed != blank -%}<li>{{ feature_trimmed }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+          <a href="{{ block.settings.button_link | default: '#' }}" class="button {% if block.settings.best_value %}button--primary{% else %}button--secondary{% endif %}" style="width:100%; text-align:center;">{{ block.settings.button_label | escape }}</a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "STC Memberships",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Memberships" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Straightforward pricing. No surprises." },
+    { "type": "range", "id": "max_width", "min": 0, "max": 1200, "step": 20, "unit": "px", "label": "Max width (0 = full width; use ~760 for a 2-plan comparison)", "default": 0 },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 52 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 52 }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan",
+      "settings": [
+        { "type": "checkbox", "id": "best_value", "label": "Mark as Best Value", "default": false },
+        { "type": "text", "id": "name", "label": "Plan name", "default": "24/7 Gym Membership" },
+        { "type": "text", "id": "price", "label": "Price", "default": "$60" },
+        { "type": "text", "id": "price_suffix", "label": "Price suffix", "default": "/mo" },
+        { "type": "textarea", "id": "description", "label": "Short description", "default": "For people who want a great local gym and the freedom to train on their own schedule." },
+        { "type": "textarea", "id": "features", "label": "Features (one per line)", "default": "24/7 gym access\nFree weights & strength equipment\nCardio equipment" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Join — $60/mo" },
+        { "type": "url", "id": "button_link", "label": "Button link (Square Payment Link)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "STC Memberships",
+      "blocks": [
+        { "type": "plan", "settings": { "name": "24/7 Gym Membership", "price": "$60", "price_suffix": "/mo", "description": "For people who want a great local gym and the freedom to train on their own schedule.", "features": "24/7 gym access\nFree weights & strength equipment\nCardio equipment", "button_label": "Join — $60/mo" } },
+        { "type": "plan", "settings": { "best_value": true, "name": "STC Coached", "price": "$90", "price_suffix": "/mo", "description": "Programming, coaching, and unlimited 24/7 access.", "features": "Unlimited 24/7 access\nPersonal programming\n7 coached sessions / week", "button_label": "Join — $90/mo" } },
+        { "type": "plan", "settings": { "name": "Student", "price": "$55", "price_suffix": "/mo", "description": "Gym access and programming, priced for students.", "features": "Gym access\nProgramming", "button_label": "Join — $55/mo" } },
+        { "type": "plan", "settings": { "name": "Family", "price": "$60", "price_suffix": "/mo first", "description": "$60/mo for the first member, $10/mo off each additional.", "features": "Base membership\n+$10/mo off each additional member", "button_label": "Start a Family Plan" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

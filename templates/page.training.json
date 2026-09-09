@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "stc-training-hero",
+      "settings": {
+        "button_link": "/pages/join"
+      }
+    },
+    "compare": {
+      "type": "stc-memberships",
+      "blocks": {
+        "c1": { "type": "plan", "settings": { "name": "24/7 Access", "price": "$60", "price_suffix": "/mo", "description": "Unlimited access, on your own.", "features": "24/7 gym access\nFree weights & strength equipment\nCardio equipment", "button_label": "Join — $60/mo", "button_link": "/pages/join" } },
+        "c2": { "type": "plan", "settings": { "best_value": true, "name": "STC Coached", "price": "$90", "price_suffix": "/mo", "description": "Everything in 24/7, plus real coaching.", "features": "Everything in 24/7 Access\nPersonal workout programming\n7 coached sessions a week", "button_label": "Join — $90/mo", "button_link": "/pages/join" } }
+      },
+      "block_order": ["c1", "c2"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "eyebrow": "Compare",
+        "heading": "For $30/month more, you get a coach in your corner.",
+        "max_width": 760
+      }
+    }
+  },
+  "order": ["hero", "compare"]
+}

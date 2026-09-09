@@ -1,0 +1,82 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .stc-hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media screen and (max-width: 749px) {
+    .stc-hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  }
+  .stc-hero-grid img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+  }
+  .stc-hero__ctas { display: flex; gap: 1.4rem; margin-top: 2.4rem; flex-wrap: wrap; }
+  .stc-hero__support { margin-top: 1.8rem; font-size: 1.5rem; color: var(--stc-steel); }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="stc-hero-grid">
+      <div>
+        <p class="stc-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h1 class="h0">{{ section.settings.heading }}</h1>
+        <p style="font-size: 1.8rem; max-width: 46rem; margin-top: 1.6rem;">{{ section.settings.subheading }}</p>
+        <p class="stc-hero__support">{{ section.settings.support_line }}</p>
+        <div class="stc-hero__ctas">
+          {%- if section.settings.button_label_1 != blank -%}
+            <a href="{{ section.settings.button_link_1 }}" class="button button--primary">{{ section.settings.button_label_1 | escape }}</a>
+          {%- endif -%}
+          {%- if section.settings.button_label_2 != blank -%}
+            <a href="{{ section.settings.button_link_2 }}" class="button button--secondary">{{ section.settings.button_label_2 | escape }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+      <div>
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'eager', widths: '400,600,800,1200,1600', alt: section.settings.image.alt | default: section.settings.heading }}
+        {%- else -%}
+          <img src="{{ 'stc-hero.jpg' | asset_url }}" alt="Springfield Training Center gym floor" loading="eager">
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "STC Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Springfield, Nebraska" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your gym. Right here in Springfield." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "24/7 access. Real equipment. Real coaching. A local gym where you're more than a membership number." },
+    { "type": "text", "id": "support_line", "label": "Support line", "default": "Everything you need to train — without driving into Omaha." },
+    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    { "type": "text", "id": "button_label_1", "label": "Primary button label", "default": "Join STC" },
+    { "type": "url", "id": "button_link_1", "label": "Primary button link" },
+    { "type": "text", "id": "button_label_2", "label": "Secondary button label", "default": "Try STC Free" },
+    { "type": "url", "id": "button_link_2", "label": "Secondary button link" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 52 }
+  ],
+  "presets": [
+    { "name": "STC Hero" }
+  ]
+}
+{% endschema %}
