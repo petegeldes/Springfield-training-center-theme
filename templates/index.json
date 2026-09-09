@@ -181,6 +181,70 @@
         "color_scheme": "scheme-2",
         "button_link": "/pages/training"
       }
+    },
+    "stc_who": {
+      "type": "stc-who-trains",
+      "blocks": {
+        "w1": {
+          "type": "photo",
+          "settings": {
+            "fallback_asset": "stc-who-woman.jpg",
+            "label": "Adults getting back at it"
+          }
+        },
+        "w2": {
+          "type": "photo",
+          "settings": {
+            "fallback_asset": "stc-who-man.jpg",
+            "label": "Everyday strength"
+          }
+        },
+        "w3": {
+          "type": "photo",
+          "settings": {
+            "fallback_asset": "stc-who-student.jpg",
+            "label": "Student athletes"
+          }
+        },
+        "w4": {
+          "type": "photo",
+          "settings": {
+            "fallback_asset": "stc-who-group.jpg",
+            "label": "A community, not a crowd"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "w2",
+        "w3",
+        "w4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
+    },
+    "stc_testimonials": {
+      "type": "stc-testimonials",
+      "blocks": {
+        "r1": {
+          "type": "testimonial"
+        },
+        "r2": {
+          "type": "testimonial"
+        },
+        "r3": {
+          "type": "testimonial"
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
     }
   },
   "order": [
@@ -189,6 +253,8 @@
     "stc_gym",
     "stc_memberships",
     "stc_no_frills",
-    "stc_coach"
+    "stc_coach",
+    "stc_who",
+    "stc_testimonials"
   ]
 }
