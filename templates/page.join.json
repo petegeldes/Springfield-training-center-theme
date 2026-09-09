@@ -112,7 +112,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Before you pay:</strong> your Square checkout includes STC's membership agreement and liability waiver. <em>[NEEDED FROM OWNER/LEGAL: confirm the exact waiver text is attached to each Square item before this goes live.]</em></p>"
+            "text": "<p><strong>Before you pay:</strong> please read STC's <a href=\"/pages/membership-liability-waiver-and-release-form\">Membership Liability Waiver and Release Form</a>. By joining, you agree to its terms.</p>"
           }
         }
       },
