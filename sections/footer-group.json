@@ -7,21 +7,30 @@
       "blocks": {
         "brand": {
           "type": "brand_information",
-          "settings": { "show_social": true }
+          "settings": {
+            "show_social": true
+          }
         },
         "address": {
           "type": "text",
           "settings": {
             "heading": "Contact",
-            "subtext": "<p>631 S 1st Street, Bay #6<br>Springfield, NE<br>24/7 member access<br><br>[PHONE NUMBER NEEDED]<br>[CONTACT EMAIL NEEDED]</p>"
+            "subtext": "<p>631 S 1st Street, Bay #6<br>Springfield, NE 68059<br>24/7 member access<br><br>402-350-0546<br>stc68059@gmail.com</p>"
           }
         },
         "links": {
           "type": "link_list",
-          "settings": { "heading": "Site", "menu": "footer" }
+          "settings": {
+            "heading": "Site",
+            "menu": "footer"
+          }
         }
       },
-      "block_order": ["brand", "address", "links"],
+      "block_order": [
+        "brand",
+        "address",
+        "links"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "newsletter_enable": false,
