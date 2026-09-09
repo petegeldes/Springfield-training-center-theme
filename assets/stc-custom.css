@@ -33,6 +33,18 @@ a.button {
   font-size: 1.3rem;
 }
 
+/* "Join Now" nav item, named exactly that in Online Store > Navigation, renders as a button */
+a.stc-nav-cta {
+  background: var(--stc-red) !important;
+  color: #fff !important;
+  padding: 0.9rem 1.8rem;
+  border-radius: 3px;
+}
+
+a.stc-nav-cta:hover {
+  background: var(--stc-red-dark) !important;
+}
+
 .list-menu--inline a,
 .header__menu-item {
   text-transform: uppercase;
