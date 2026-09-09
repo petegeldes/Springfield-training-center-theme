@@ -245,6 +245,23 @@
       "settings": {
         "color_scheme": "scheme-2"
       }
+    },
+    "stc_shop": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop STC",
+        "heading_size": "h1",
+        "description": "Gear people actually want to wear.",
+        "show_description": true,
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "image_ratio": "square",
+        "columns_mobile": "2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -255,6 +272,7 @@
     "stc_no_frills",
     "stc_coach",
     "stc_who",
-    "stc_testimonials"
+    "stc_testimonials",
+    "stc_shop"
   ]
 }
