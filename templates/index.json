@@ -228,13 +228,28 @@
       "type": "stc-testimonials",
       "blocks": {
         "r1": {
-          "type": "testimonial"
+          "type": "testimonial",
+          "settings": {
+            "quote": "Springfield Training Center has helped me get stronger and feel better than I ever expected at age fifty. I am much stronger than I was even in my twenties. Clay has been instrumental in helping me reach my goals while making sure I'm learning proper technique and doing everything safely. I highly recommend Springfield Training Center to anyone in Springfield and the surrounding communities of any age who wants to get stronger, improve their fitness, and have a great coach in their corner.",
+            "name": "Lee Smith",
+            "show_placeholder_flag": false
+          }
         },
         "r2": {
-          "type": "testimonial"
+          "type": "testimonial",
+          "settings": {
+            "quote": "I've been working out with Clay for about five years now, and he is hands down the best trainer I've ever worked with. He truly cares about helping you reach your fitness goals and make sure you're doing things the right way from proper form and weight selection to training sets and personalized workout programs. What I love most about Springfield Training Center is that it's truly a judgment free place. Everyone encourages and supports one another no matter where you are in your fitness journey. You feel welcomed, motivated, and like you're part of something bigger than just the gym. I'm so thankful to have found this place and would highly recommend Springfield Training Center to anyone looking for a supportive, motivating, and knowledgeable fitness community.",
+            "name": "Julie Lee",
+            "show_placeholder_flag": false
+          }
         },
         "r3": {
-          "type": "testimonial"
+          "type": "testimonial",
+          "settings": {
+            "quote": "Clay is a fantastic trainer. He pushes me to be my best and is always supportive of everyone. He must have great parents.",
+            "name": "Janet Keyes",
+            "show_placeholder_flag": false
+          }
         }
       },
       "block_order": [
@@ -243,7 +258,8 @@
         "r3"
       ],
       "settings": {
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "heading": "Don't just take our word for it."
       }
     },
     "stc_shop": {
