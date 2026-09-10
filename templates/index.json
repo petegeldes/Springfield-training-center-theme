@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "stc_hero": {
@@ -11,7 +20,9 @@
         "button_label_1": "Join STC",
         "button_link_1": "/pages/join",
         "button_label_2": "Try STC Free",
-        "button_link_2": "/pages/free-week"
+        "button_link_2": "/pages/free-week",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "stc_why": {
@@ -53,7 +64,12 @@
         "t4"
       ],
       "settings": {
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "tile_background": "#f6f3ec",
+        "eyebrow": "Why STC",
+        "heading": "A real gym, close to home.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_gym": {
@@ -103,7 +119,12 @@
         "p5"
       ],
       "settings": {
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "eyebrow": "The Gym",
+        "heading": "Clean. Well-equipped. Never crowded.",
+        "text": "Four power racks, free weights, dumbbells up to 120 lbs, strength machines, and cardio — with room to actually move.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_memberships": {
@@ -112,6 +133,7 @@
         "m1": {
           "type": "plan",
           "settings": {
+            "best_value": false,
             "name": "24/7 Gym Membership",
             "price": "$60",
             "price_suffix": "/mo",
@@ -137,6 +159,7 @@
         "m3": {
           "type": "plan",
           "settings": {
+            "best_value": false,
             "name": "Student",
             "price": "$55",
             "price_suffix": "/mo",
@@ -149,6 +172,7 @@
         "m4": {
           "type": "plan",
           "settings": {
+            "best_value": false,
             "name": "Family",
             "price": "$60",
             "price_suffix": "/mo first",
@@ -166,20 +190,37 @@
         "m4"
       ],
       "settings": {
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "eyebrow": "Memberships",
+        "heading": "Straightforward pricing. No surprises.",
+        "max_width": 0,
+        "require_waiver_agreement": false,
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_no_frills": {
       "type": "stc-no-frills",
       "settings": {
-        "color_scheme": "scheme-3"
+        "color_scheme": "scheme-3",
+        "eyebrow": "No Frills. Just Work.",
+        "heading": "STC isn't built around gimmicks.",
+        "items": "Quality equipment\nConvenient 24/7 access\nA clean place to train\nCoaching when you want it\nPeople who know your name",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "stc_coach": {
       "type": "stc-coach",
       "settings": {
         "color_scheme": "scheme-2",
-        "button_link": "/pages/training"
+        "eyebrow": "Train With Clay",
+        "heading": "Hands-on coaching, not a corporate script.",
+        "text": "Clay is on the floor, knows members by name, and stays connected to local and high-school sports. STC Coached members get real programming and coaching — not just a punch card.",
+        "button_label": "Explore STC Coached",
+        "button_link": "/pages/training",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_who": {
@@ -221,7 +262,11 @@
         "w4"
       ],
       "settings": {
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "eyebrow": "Who Trains Here",
+        "heading": "Beginners. Athletes. Everyone in between.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_testimonials": {
@@ -259,22 +304,36 @@
       ],
       "settings": {
         "color_scheme": "scheme-2",
-        "heading": "Don't just take our word for it."
+        "eyebrow": "What Members Say",
+        "heading": "Don't just take our word for it.",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_shop": {
       "type": "featured-collection",
       "settings": {
+        "collection": "stc-merch",
+        "products_to_show": 4,
         "title": "Shop STC",
         "heading_size": "h1",
         "description": "<p>Gear people actually want to wear.</p>",
         "show_description": true,
-        "products_to_show": 4,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 52,
         "padding_bottom": 52
       }
@@ -282,15 +341,30 @@
     "stc_location": {
       "type": "stc-location",
       "settings": {
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-2",
+        "eyebrow": "Location",
+        "heading": "Springfield, Nebraska.",
+        "address": "631 S 1st Street, Bay #6, Springfield, NE 68059",
+        "access_line": "24/7 for members",
+        "contact_line": "402-350-0546",
+        "directions_url": "",
+        "map_embed_url": "",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "stc_final": {
       "type": "stc-final-cta",
       "settings": {
         "color_scheme": "scheme-3",
+        "heading": "Your gym is right here.",
+        "items": "24/7 access\nReal equipment\nReal coaching\nLocal community",
+        "button_label_1": "Join STC",
         "button_link_1": "/pages/join",
-        "button_link_2": "/pages/free-week"
+        "button_label_2": "Try STC Free",
+        "button_link_2": "/pages/free-week",
+        "padding_top": 68,
+        "padding_bottom": 68
       }
     }
   },
@@ -308,4 +382,3 @@
     "stc_final"
   ]
 }
-
