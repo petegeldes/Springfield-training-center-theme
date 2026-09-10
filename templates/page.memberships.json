@@ -49,7 +49,7 @@
             "price_suffix": "/month",
             "description": "Gym access and programming, priced for students.",
             "what": "Gym access and programming.",
-            "who": "Students. Eligibility details (age/school requirements, if any) to be confirmed by STC before launch.",
+            "who": "Students.",
             "how": "Pick this plan and pay securely through Square.",
             "button_label": "Join — $55/mo",
             "button_link": "https://square.link/u/55sgPcvT"
@@ -63,7 +63,7 @@
             "price_suffix": "/mo first member",
             "description": "$10/month off each additional family member.",
             "what": "The base membership for your first family member, with $10/month off every additional member you add.",
-            "who": "Families training together. Full eligibility rules to be confirmed by STC before launch.",
+            "who": "Families training together.",
             "how": "Pick this plan and pay securely through Square.",
             "button_label": "Start a Family Plan",
             "button_link": "https://square.link/u/vOQCCqpb"
